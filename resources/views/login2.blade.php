@@ -21,7 +21,8 @@
 
                         </div>
                         <div class="row">
-                            <div class="col-md-4">
+                        <div class="col-md-2"></div>
+                            <div class="col-md-6">
                                 <div class="card">
                                     <div class="card-header card-header-primary">
                                         <h4 class="card-title">Login</h4>
@@ -45,7 +46,8 @@
                                                         <input name="password" id="login_password" type="password" class="form-control" required>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div><br/>
+                                            <a href="{{route('register_user')}}">Register</a>
                                             <button name="submit" type="submit" class="btn btn-primary pull-right">Sign In</button>
                                             <div class="clearfix"></div>
                                         </form>

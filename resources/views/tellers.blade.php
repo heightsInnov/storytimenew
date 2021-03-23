@@ -113,7 +113,6 @@
             </div>
         </div>
     </div>
-    {{ $allStory->links() }}
     <footer class="">
         <div class="container">
             @include('layouts.footer')

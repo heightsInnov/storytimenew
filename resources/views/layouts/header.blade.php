@@ -31,25 +31,25 @@
                     </a></div>
                 <div class="sidebar-wrapper">
                     <ul class="nav">
-                        <li class="nav-item active" onclick="color_select(this)">
-                            <a class="nav-link" href="{{ route("dashboard") }}">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route("dashboard")}}">
                                 <i class="material-icons">dashboard</i>
                                 <p>Dashboard</p>
                             </a>
                         </li>
-                        <li class="nav-item " onclick="color_select(this)">
+                        <li class="nav-item ">
                             <a class="nav-link" href="{{ route("teller_dashboard") }}">
                                 <i class="material-icons">person</i>
                                 <p>Story Tellers</p>
                             </a>
                         </li>
-                        <li class="nav-item " onclick="color_select(this)">
+                        <li class="nav-item ">
                             <a class="nav-link" href="{{ route("seeker_dashboard") }}">
                                 <i class="material-icons">content_paste</i>
                                 <p>Story Seekers</p>
                             </a>
                         </li>
-                        <li class="nav-item " onclick="color_select(this)">
+                        <li class="nav-item ">
                             <a class="nav-link" href="#">
                                 <i class="material-icons">library_books</i>
                                 <p>Feedback</p>

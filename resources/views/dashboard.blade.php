@@ -63,15 +63,15 @@
                         </a>
                     </div>
                 </div>
-                @foreach ($paginated_stories as $story)
-    <div class="container-fluid">
+                <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-12">
-
+                @foreach ($paginated_stories as $story)
+                @if($loop->index < 4)
+            <div class="col-md-3" data-toggle="modal" data-target="#{{$story->id}}">
                 <div class="card card-chart">
-                    <div class="card-header card-header-success">
-                        <img src="assets/img/imgtry.png" alt="Basics of Programming">
+                    <div class="card-header card-header-success" >
+                        <img src="/assets/img/imgtry.png" alt="Basics of Programming">
                     </div>
 
                     <div class="card-body">
@@ -92,12 +92,26 @@
                 </div>
 
             </div>
-
-        </div>
+            <div class="modal fade bd-example-modal-lg" id="{{$story->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title text-center" id="exampleModalLongTitle">{{$story->title}}</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{$story->story}}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+    @endforeach
+    </div>
 
     </div>
-    @endforeach
-    {{ $paginated_stories->links() }}
             </div>
         </div>
         <div class="row">
@@ -127,7 +141,6 @@
                         </table>
                     </div>
                 </div>
-                {{ $paginated_stories->links() }}
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="card">
@@ -154,24 +167,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-                {{ $paginated_stories->links() }}
-            </div>
-        </div>
-    </div>
-    <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title text-center" id="exampleModalLongTitle">Basics of Programming</h3>
-                </div>
-                <div class="modal-body">
-                    <p>Cras mattis consectetur purus sit amet fermentum.
-                        Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                        Morbi leo risus, porta ac consectetur ac, vestibulum at eros</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

@@ -6,11 +6,12 @@
             {{ session()->get('success') }}
         </div>
     @endif
-    @foreach ($allStory as $story)
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-12">
+    @foreach ($allStory as $story)
+    
+            <div class="col-md-3" data-toggle="modal" data-target="#{{$story->id}}">
 
                 <div class="card card-chart">
                     <div class="card-header card-header-success">
@@ -35,12 +36,26 @@
                 </div>
 
             </div>
-
-        </div>
+            <div class="modal fade bd-example-modal-lg" id="{{$story->id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title text-center" id="exampleModalLongTitle">{{$story->title}}</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>{{$story->story}}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    @endforeach
+    </div>
 
     </div>
-    @endforeach
-    {{ $allStory->links() }}
     <footer class="">
     <div class="container">
         @include('layouts.footer')
